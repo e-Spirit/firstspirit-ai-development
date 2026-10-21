@@ -11,7 +11,9 @@ the counterpart to the toolkit: the toolkit holds the knowledge (skills), this r
 | Path | What |
 |---|---|
 | `AGENTS.md` | The rules for an assistant (and a checklist for people). `CLAUDE.md` points to it. |
+| `connection.env.example` | The connection file for the assistant, without values. You copy it to `~/connection.env`, outside this repository |
 | `.claude/settings.json` | Permission rules for Claude Code: no reading of the connection file, no `git add -A`, no skipped hooks |
+| `scripts/gates.sh`, `scripts/secret-scan.py`, `.githooks/`, `.github/workflows/gates.yml` | A secret scan before every commit (`scripts/install-hooks.sh`, once per clone) and in CI |
 | `examples/rheinrausch/` | A worked example: a fictitious Cologne adventure company with a brief, a design system (look, content, markup fragments) and an empty `decisions/` folder you fill while you build. Everything in it is made up. |
 | `LICENSE`, `CODE_OF_CONDUCT.md` | MIT, as in the toolkit; Contributor Covenant |
 

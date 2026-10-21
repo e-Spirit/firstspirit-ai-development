@@ -1,0 +1,4 @@
+#!/bin/sh
+# Blocks a commit that would add secrets. Installed by scripts/install-hooks.sh.
+HERE="$(git rev-parse --show-toplevel)"
+cd "$HERE" && python3 "$HERE/scripts/secret-scan.py" --staged || { echo "pre-commit: secret scan failed" >&2; exit 1; }

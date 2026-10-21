@@ -1,0 +1,20 @@
+# Runs the mechanical gates on every pull request and on every push to main.
+name: gates
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  gates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: "Gates (pull request: also the spec or issue check against the base branch)"
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            sh scripts/gates.sh "origin/${{ github.base_ref }}..HEAD"
+          else
+            sh scripts/gates.sh
+          fi

@@ -25,4 +25,17 @@ of the FirstSpirit AI Toolkit. The root `AGENTS.md` applies as well; these rules
    case, with no type prefix and no project prefix (`experience_card`, not `rr_experience_card`). Variables carry the prefix of their
    template type (`pt_`, `st_`, `lt_`, `ps_`).
 
+## Where the skills stop short
+
+The skills do not cover every detail, and an instruction sometimes has to be explicit. These came up while building this example
+(`[observed]` 2026-10, REST module 0.0.25-beta). Check the skill first; use them where it is silent.
+
+- A GOM has no `<FORM>` root: put the editors directly in `<CMS_MODULE>`. `FS_CATALOG` takes no `hFill` and names its section
+  templates (`<TEMPLATES type="section">`).
+- A new catalog card needs a UUID as `id`; option editors take `{"key","value"}`; a reference to a medium needs `uidType`
+  `MEDIASTORE_LEAF`. A catalog card cannot carry a name, so cards are told apart by a field value.
+- The server checks link-template references when it writes a form: create the link template first.
+- REST does not create media folders, does not set "Parse file" on a medium, and does not create datasets or table templates.
+  Say what you hand over and why.
+
 The REST skill owns what the API can and cannot do. If a step needs something it does not cover, say so and hand that step over.

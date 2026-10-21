@@ -1,0 +1,11 @@
+#!/bin/sh
+# gates.sh: the mechanical checks in one command. Run it before every push; the same script runs in CI (.github/workflows/gates.yml).
+#   scripts/gates.sh
+set -u
+HERE="$(cd "$(dirname "$0")/.." && pwd)"
+rc=0
+if python3 "$HERE/scripts/secret-scan.py" "$HERE"; then echo "PASS  G1 secret scan"; else echo "FAIL  G1 secret scan"; rc=1; fi
+tracked=$(git -C "$HERE" ls-files | grep -E '(^|/)(\.env|connection\.env)$|\.pem$|\.key$' || true)
+if [ -z "$tracked" ]; then echo "PASS  G2 no connection file, key or .env tracked"; else echo "FAIL  G2 tracked file that must stay out of Git: $tracked"; rc=1; fi
+[ $rc -eq 0 ] && echo "gates: green" || echo "gates: FAILED"
+exit $rc
