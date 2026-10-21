@@ -36,6 +36,53 @@ for the documentation link. If you must go on, tag every statement that depends 
 5. **Keep a copy of what you sent** in `templates/<name>/` (GOM, channel source, rules), without secrets.
 6. **End every answer** with a short list: what you created (type, uid), what you read back, what you assumed, what you did not do.
 
+## Loop and checkpoints
+
+Do not start the next step until the checkpoint is true.
+
+| Step | Checkpoint |
+|---|---|
+| **Decide** | The decision for the next template is written down, with its fields, editor types and mandatory flags. A skipped question is recorded as a default, so it can be revisited. |
+| **Build** | Only what the decision names, in dependency order, in the person's own project. |
+| **Read back** | A fresh read of what you wrote, compared with the decision. |
+| **Look** | The person sees the result in the preview or the client. |
+| **Keep** | A copy of what you sent is in `templates/<name>/`; `STATE.md` says what is done, open and next. |
+
+A small question or change needs none of this.
+
+## Evidence
+
+Use the lowest check that answers the question, and say which one produced your evidence: a claim against its source (the skill or the
+documentation), a read-only look at the project, a write followed by a read-back, or looking at it in the preview. Say SKIP, not PASS, when a
+check could not run. Check exit codes and status codes, not what a script printed. One fact, one tag: `[odfs]` read in the documentation,
+`[observed]` seen in a live run (date and version), `[verify]` not yet checked. A fact that came from your memory is `[verify]`.
+
+Before you end a session, update `STATE.md` in the working folder (Done, Open, Next). A continuing session works from that file, not from
+a longer prompt.
+
+## Run log
+
+Keep a short running log of the work, so that a person can read afterwards how long a step took, what went wrong and how it was handled.
+One line per event in `logs/session.log` (local, ignored by Git), written only through `scripts/runlog.py`:
+
+```
+scripts/runlog.py start STEP [message]                         # when you begin a step (decide, build, read-back, ...)
+scripts/runlog.py end STEP [--status fail] [message]           # when it is done; the seconds are computed
+scripts/runlog.py error STEP --handled agent --fix "what you changed" message   # an error you dealt with yourself
+scripts/runlog.py error STEP --handled human message           # an error you could not solve: you stopped and asked a person
+scripts/runlog.py error STEP --handled open message            # an error not dealt with yet; later: resolve STEP --by agent|human message
+scripts/runlog.py note STEP message                            # a decision or an observation worth one line
+scripts/runlog.py summary                                      # time per step, errors and how they were handled
+```
+
+- **Log actions, not content**: what was done, how long it took, what failed, the status code or error class, how it ended. One short line each.
+- **No names and no secrets.** Nothing that identifies the person, the machine, the customer or the server: no user or host names, e-mail
+  addresses, project names, instance URLs, ids, keys, tokens or passwords. `runlog.py` redacts home paths, the user and host name, e-mail
+  addresses, URL hosts and queries, credentials, UUIDs, IP addresses and long tokens, but that is the backstop, not the rule: do not pass
+  such text in, and use neutral step words. Times are UTC.
+- The log is the person's. They decide whether to hand it in as feedback; `scripts/runlog.py check` (part of `scripts/gates.sh`) fails when a
+  line would still be changed by the redaction.
+
 ## Not part of this repository
 
 The Git side of a project (branch projects, export and import with fs-cli) is handled by the platform pipeline, not here. Do not

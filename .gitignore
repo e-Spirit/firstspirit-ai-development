@@ -11,4 +11,5 @@ projects/
 logs/
 results/
 tmp/
+STATE.md
 .DS_Store

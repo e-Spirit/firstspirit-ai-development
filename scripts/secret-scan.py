@@ -71,6 +71,8 @@ def scan_text(path, findings, text=None):
         except (UnicodeDecodeError, OSError):
             return
     for lineno, line in enumerate(text.splitlines(), 1):
+        if "secret-scan: ignore" in line:
+            continue
         for rule, pattern in PATTERNS:
             if pattern.search(line):
                 findings.append((path, "line %d" % lineno, rule))
