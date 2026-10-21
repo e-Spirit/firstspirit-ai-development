@@ -1,0 +1,99 @@
+{
+  "_comment": "Page-level content: header, hero, quote, goals, filter, business band, footer. The page language is German.",
+  "nav": [
+    {
+      "label": "Erlebnisse",
+      "target": "#erlebnisse"
+    },
+    {
+      "label": "Finden",
+      "target": "#finden"
+    },
+    {
+      "label": "Business",
+      "target": "#business"
+    }
+  ],
+  "cta": {
+    "label": "Buchen",
+    "target": "#erlebnisse"
+  },
+  "hero": {
+    "badge": "Neu in Köln",
+    "headline": "Erlebe Köln.",
+    "script": "Ganz neu.",
+    "lead": "Rad, Rhein, Kölsch und Quests. Sechs Arten, die Stadt neu zu erleben.",
+    "button": {
+      "label": "Erlebnis finden",
+      "target": "#erlebnisse"
+    },
+    "backgroundImage": "photo-dom-sunset.jpeg",
+    "sideImage": "illustration-koeln-pop.jpeg",
+    "sticker": "Dom inklusive"
+  },
+  "quote": {
+    "before": "„Wir wollen nicht noch eine langweilige Tourismus-Website. Wir wollen, dass Menschen den Rhein sehen und sofort denken: ",
+    "highlight": "DAS MUSS ICH MACHEN.",
+    "after": "“",
+    "cite": "Die RheinRausch-Geschäftsführung (fiktiv)",
+    "original": "We don't want another boring tourism website. We want people to see the Rhine and immediately think: I NEED TO DO THAT."
+  },
+  "goals": [
+    {
+      "n": "01",
+      "eyebrow": "Inspire",
+      "title": "Begeistern",
+      "text": "Lust auf Köln machen.",
+      "variant": "pink",
+      "icon": "sparkle"
+    },
+    {
+      "n": "02",
+      "eyebrow": "Personalize",
+      "title": "Finden",
+      "text": "Jedem das passende Erlebnis zeigen.",
+      "variant": "cyan",
+      "icon": "search"
+    },
+    {
+      "n": "03",
+      "eyebrow": "Convert",
+      "title": "Buchen",
+      "text": "Aus Vorfreude wird eine Buchung.",
+      "variant": "gelb",
+      "icon": "ticket"
+    }
+  ],
+  "find": {
+    "eyebrow": "Finden",
+    "headline": "Was hast du Lust auf?",
+    "filters": [
+      "Alle",
+      "Draußen",
+      "Abends",
+      "Gruppen",
+      "Team"
+    ],
+    "empty": "Hier ist noch nichts. Probier einen anderen Filter."
+  },
+  "booking": {
+    "namePlaceholder": "Dein Name",
+    "button": "Jetzt buchen",
+    "done": "Gebucht! Wir sehen uns am Rhein,",
+    "nameFallback": "du"
+  },
+  "business": {
+    "eyebrow": "Business",
+    "headline": "Teamevent ohne Fremdscham.",
+    "text": "Quest, Kajak oder Kölsch-Tour. Wir bauen den Tag, ihr bringt das Team.",
+    "button": {
+      "label": "Angebot anfragen",
+      "target": "#erlebnisse"
+    },
+    "image": "photo-mural-colourful.jpeg"
+  },
+  "footer": {
+    "note": "Fiktiv, für die DevCon Köln.",
+    "mail": "hallo@rheinrausch.example"
+  }
+}

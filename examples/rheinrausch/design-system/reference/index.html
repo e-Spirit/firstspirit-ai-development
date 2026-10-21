@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RheinRausch – Erlebe Köln. Ganz neu.</title>
+<link rel="icon" href="../logos/rheinrausch-app-icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/extras.css">
+<style>html{scroll-behavior:smooth}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}</style>
+</head>
+<body>
+<header class="rr-header"><div class="rr-container rr-header__inner">
+<a href="#"><img class="rr-header__logo" src="../logos/rheinrausch-horizontal-light.svg" alt="RheinRausch"></a>
+<ul class="rr-nav"><li><a href="#erlebnisse">Erlebnisse</a></li><li><a href="#finden">Finden</a></li><li><a href="#business">Business</a></li></ul>
+<a class="rr-btn rr-btn--sm" href="#erlebnisse">Buchen</a>
+</div></header>
+
+<main>
+<section class="rr-hero" style="--rr-hero-img:url(../assets/photo-dom-sunset.jpeg)">
+<div class="rr-hero__body rr-container rr-hero__grid">
+<div>
+<span class="rr-badge">Neu in Köln</span>
+<h1>Erlebe Köln. <span class="rr-script">Ganz neu.</span></h1>
+<p class="rr-hero__lead">Rad, Rhein, Kölsch und Quests. Sechs Arten, die Stadt neu zu erleben.</p>
+<a class="rr-btn" href="#erlebnisse">Erlebnis finden <img class="rr-btn__icon" src="../icons/arrow.svg" alt=""></a>
+</div>
+<div class="rr-hero__visual">
+<div class="rr-photo"><img class="rr-hero__photo" src="../assets/illustration-koeln-pop.jpeg" alt=""></div>
+<span class="rr-sticker">Dom inklusive</span>
+<img class="rr-hero__splash" src="../stickers/splash.svg" alt="">
+</div>
+</div>
+<span class="rr-divider" aria-hidden="true"></span>
+</section>
+
+<section class="rr-container" style="padding-top:var(--rr-space-6)">
+<figure class="rr-quote"><blockquote class="rr-quote__text" style="margin:0">„Wir wollen nicht noch eine langweilige Tourismus-Website. Wir wollen, dass Menschen den Rhein sehen und sofort denken: <mark>DAS MUSS ICH MACHEN.</mark>“</blockquote>
+<figcaption class="rr-quote__cite">Die RheinRausch-Geschäftsführung (fiktiv)</figcaption></figure>
+</section>
+
+<section class="rr-container" style="padding-top:var(--rr-space-7)">
+<div class="rr-grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))"><div class="rr-goal rr-goal--pink"><div class="rr-goal__top"><span class="rr-goal__icon"><img src="../icons/sparkle.svg" alt=""></span><span class="rr-goal__num">01 · Inspire</span></div><h3 class="rr-goal__title">Begeistern</h3><p class="rr-goal__text">Lust auf Köln machen.</p></div><div class="rr-goal rr-goal--cyan"><div class="rr-goal__top"><span class="rr-goal__icon"><img src="../icons/search.svg" alt=""></span><span class="rr-goal__num">02 · Personalize</span></div><h3 class="rr-goal__title">Finden</h3><p class="rr-goal__text">Jedem das passende Erlebnis zeigen.</p></div><div class="rr-goal rr-goal--gelb"><div class="rr-goal__top"><span class="rr-goal__icon"><img src="../icons/ticket.svg" alt=""></span><span class="rr-goal__num">03 · Convert</span></div><h3 class="rr-goal__title">Buchen</h3><p class="rr-goal__text">Aus Vorfreude wird eine Buchung.</p></div></div>
+</section>
+
+<section id="finden" class="rr-container" style="padding-top:var(--rr-space-8)">
+<div class="rr-eyebrow">Finden</div>
+<h2>Was hast du Lust auf?</h2>
+<div class="rr-filters" role="group" aria-label="Filter"><button class="rr-chip" type="button" data-filter="Alle" aria-pressed="true">Alle</button><button class="rr-chip" type="button" data-filter="Draußen" aria-pressed="false">Draußen</button><button class="rr-chip" type="button" data-filter="Abends" aria-pressed="false">Abends</button><button class="rr-chip" type="button" data-filter="Gruppen" aria-pressed="false">Gruppen</button><button class="rr-chip" type="button" data-filter="Team" aria-pressed="false">Team</button></div>
+</section>
+
+<section id="erlebnisse" class="rr-container" style="padding-top:var(--rr-space-6)">
+<div class="rr-grid"><button class="rr-card rr-line--rides" type="button" data-title="Rides" data-text="Geführte E-Bike-Tour vom Dom bis in die Rheinauen. Akku voll, Laune auch." data-duration="3 Std." data-price="ab 49 €" data-status="Heute frei" data-status-tone="gruen"><span class="rr-card__icon"></span><span class="rr-card__title">Rides</span><span class="rr-card__text">Mit dem E-Bike durch Veedel und Rheinauen.</span><span class="rr-card__hook">Rheinauen ohne Schweiß</span><span class="rr-card__meta">3 Std. · ab 49 €</span></button><button class="rr-card rr-line--river" type="button" data-title="River" data-text="Zwei Stunden paddeln, Blick auf die Hohenzollernbrücke, null Stau." data-duration="2 Std." data-price="ab 39 €" data-status="Heute frei" data-status-tone="gruen"><span class="rr-card__icon"></span><span class="rr-card__title">River</span><span class="rr-card__text">Kajak und SUP, mit Dom im Rücken.</span><span class="rr-card__hook">Dom-Blick vom Wasser</span><span class="rr-card__meta">2 Std. · ab 39 €</span></button><button class="rr-card rr-line--nights" type="button" data-title="Nights" data-text="Eine Nacht, drei Bühnen, ein Kölsch zu viel. Mit Stadtführer, der alles weiß." data-duration="3 Std." data-price="ab 35 €" data-status="Fast ausgebucht" data-status-tone="pink"><span class="rr-card__icon"></span><span class="rr-card__title">Nights</span><span class="rr-card__text">Kneipen, Kabarett und Kölner Klüngel.</span><span class="rr-card__hook">Drei Bühnen, eine Nacht</span><span class="rr-card__meta">3 Std. · ab 35 €</span></button><button class="rr-card rr-line--kolsch" type="button" data-title="Kölsch Experience" data-text="Drei Brauhäuser, ein Braumeister, beliebig viele Stangen. Mit Häppchen." data-duration="2,5 Std." data-price="ab 45 €" data-status="Heute frei" data-status-tone="gruen"><span class="rr-card__icon"></span><span class="rr-card__title">Kölsch Experience</span><span class="rr-card__text">Brauhaus-Tour mit Stangen-Garantie.</span><span class="rr-card__price-row"><span class="rr-card__price">ab 45 €</span><span class="rr-card__meta">2,5 Std.</span></span></button><button class="rr-card rr-line--quest" type="button" data-title="Quest" data-text="Löst Rätsel an echten Orten. Wer verliert, zahlt die nächste Runde." data-duration="2 Std." data-price="ab 25 €" data-status="Heute frei" data-status-tone="gruen"><span class="rr-card__icon"></span><span class="rr-card__title">Quest</span><span class="rr-card__text">Stadtrallye mit Rätseln und Rache.</span><span class="rr-card__price-row"><span class="rr-card__price">ab 25 €</span><span class="rr-card__meta">2 Std.</span></span></button><button class="rr-card rr-line--business" type="button" data-title="Business" data-text="Wir bauen euren Tag aus allen fünf Linien. Ab 10 Personen." data-duration="flexibel" data-price="Auf Anfrage" data-status="Auf Anfrage" data-status-tone="navy"><span class="rr-card__icon"></span><span class="rr-card__title">Business</span><span class="rr-card__text">Teamevents, die nicht nach Teamevent klingen.</span><span class="rr-card__hook">Ohne Fremdscham</span><span class="rr-card__meta">flexibel · Auf Anfrage</span></button></div>
+<p class="rr-empty" id="empty" hidden>Hier ist noch nichts. Probier einen anderen Filter.</p>
+<span class="rr-divider rr-divider--night" aria-hidden="true" style="margin-top:var(--rr-space-8);margin-inline:calc(var(--rr-space-5) * -1);width:calc(100% + var(--rr-space-5) * 2)"></span>
+</section>
+
+<section id="business" class="rr-section rr-section--night" style="padding-bottom:0">
+<div class="rr-container rr-split">
+<div>
+<div class="rr-eyebrow">Business</div>
+<h2>Teamevent ohne Fremdscham.</h2>
+<p class="rr-band-lead">Quest, Kajak oder Kölsch-Tour. Wir bauen den Tag, ihr bringt das Team.</p>
+<a class="rr-btn" href="#erlebnisse">Angebot anfragen</a>
+</div>
+<div class="rr-photo"><img src="../assets/photo-mural-colourful.jpeg" alt=""></div>
+</div>
+<span class="rr-divider" aria-hidden="true" style="margin-top:var(--rr-space-7)"></span>
+</section>
+
+</main>
+
+<footer class="rr-footer"><div class="rr-container rr-footer__bar">
+<img src="../logos/rheinrausch-horizontal-dark.svg" alt="RheinRausch">
+<span>Fiktiv, für die DevCon Köln.</span>
+<a href="mailto:hallo@rheinrausch.example">hallo@rheinrausch.example</a>
+</div></footer>
+
+<div class="rr-modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="m-title" hidden data-done="Gebucht! Wir sehen uns am Rhein," data-name-fallback="du">
+<div class="rr-modal__panel">
+<button class="rr-modal__close" id="m-close" type="button" aria-label="Schließen"><img src="../icons/close.svg" alt="" width="18" height="18"></button>
+<div class="rr-modal__head"><span class="rr-card__icon" id="m-icon"></span><span class="rr-badge rr-badge--ink" id="m-status"></span></div>
+<h3 id="m-title" style="font-size:2.5rem;margin:var(--rr-space-4) 0 var(--rr-space-2)"></h3>
+<p id="m-text" style="font-size:1.1875rem;margin:0"></p>
+<div class="rr-modal__facts"><span><img src="../icons/clock.svg" alt=""><span id="m-dur"></span></span><span><img src="../icons/euro.svg" alt=""><span id="m-price"></span></span></div>
+<div class="rr-modal__book" id="m-book"><input class="rr-input" id="m-name" placeholder="Dein Name" aria-label="Name"><button class="rr-btn" id="m-go" type="button">Jetzt buchen</button></div>
+<div class="rr-modal__done" id="m-done" hidden><img src="../icons/check.svg" alt="" width="28" height="28"><span id="m-done-text"></span></div>
+</div></div>
+
+<script src="../js/page.js"></script>
+</body>
+</html>

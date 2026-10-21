@@ -1,0 +1,12 @@
+/* Tailwind v4: @import "tailwindcss"; @import "./tokens.css"; @import "./tailwind-theme.css"; */
+@theme {
+  --color-rr-blau:var(--rr-blau); --color-rr-ink:var(--rr-ink); --color-rr-paper:var(--rr-paper); --color-rr-night:var(--rr-night);
+  --color-rr-cyan:var(--rr-cyan); --color-rr-pink:var(--rr-pink); --color-rr-gelb:var(--rr-gelb); --color-rr-gruen:var(--rr-gruen);
+  --color-rr-tint-cyan:var(--rr-tint-cyan); --color-rr-tint-pink:var(--rr-tint-pink); --color-rr-tint-gelb:var(--rr-tint-gelb); --color-rr-tint-gruen:var(--rr-tint-gruen);
+  --color-rr-cyan-ink:var(--rr-cyan-ink); --color-rr-pink-ink:var(--rr-pink-ink); --color-rr-gruen-ink:var(--rr-gruen-ink);
+  --font-heading:var(--rr-font-heading); --font-body:var(--rr-font-body); --font-script:var(--rr-font-script);
+  --radius-rr-sm:12px; --radius-rr-md:20px; --radius-rr-lg:28px; --radius-rr-xl:40px;
+  --shadow-rr:var(--rr-shadow); --shadow-rr-pop:var(--rr-shadow-pop);
+  --background-image-rr-ribbon:var(--rr-ribbon);
+}
+/* Usage: <a class="bg-rr-gelb text-rr-blau rounded-full px-6 py-3 font-bold shadow-rr">Buchen</a> */

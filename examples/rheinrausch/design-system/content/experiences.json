@@ -1,0 +1,83 @@
+{
+  "_comment": "The six RheinRausch experience lines. One entry = one Experience card. The id is the line: it picks the CSS class rr-line--<id>, which fixes colour and icon together, and the filter tags (see js/rr-page.js). 'hero' decides the highlight on the card: 'hook' shows the yellow hook line, 'price' shows the big price tile. Never both.",
+  "experiences": [
+    {
+      "id": "rides",
+      "title": "Rides",
+      "teaser": "Mit dem E-Bike durch Veedel und Rheinauen.",
+      "hook": "Rheinauen ohne Schweiß",
+      "hero": "hook",
+      "text": "Geführte E-Bike-Tour vom Dom bis in die Rheinauen. Akku voll, Laune auch.",
+      "duration": "3 Std.",
+      "price": "ab 49 €",
+      "status": "Heute frei",
+      "statusTone": "gruen",
+      "image": null
+    },
+    {
+      "id": "river",
+      "title": "River",
+      "teaser": "Kajak und SUP, mit Dom im Rücken.",
+      "hook": "Dom-Blick vom Wasser",
+      "hero": "hook",
+      "text": "Zwei Stunden paddeln, Blick auf die Hohenzollernbrücke, null Stau.",
+      "duration": "2 Std.",
+      "price": "ab 39 €",
+      "status": "Heute frei",
+      "statusTone": "gruen",
+      "image": null
+    },
+    {
+      "id": "nights",
+      "title": "Nights",
+      "teaser": "Kneipen, Kabarett und Kölner Klüngel.",
+      "hook": "Drei Bühnen, eine Nacht",
+      "hero": "hook",
+      "text": "Eine Nacht, drei Bühnen, ein Kölsch zu viel. Mit Stadtführer, der alles weiß.",
+      "duration": "3 Std.",
+      "price": "ab 35 €",
+      "status": "Fast ausgebucht",
+      "statusTone": "pink",
+      "image": null
+    },
+    {
+      "id": "kolsch",
+      "title": "Kölsch Experience",
+      "teaser": "Brauhaus-Tour mit Stangen-Garantie.",
+      "hook": null,
+      "hero": "price",
+      "text": "Drei Brauhäuser, ein Braumeister, beliebig viele Stangen. Mit Häppchen.",
+      "duration": "2,5 Std.",
+      "price": "ab 45 €",
+      "status": "Heute frei",
+      "statusTone": "gruen",
+      "image": null
+    },
+    {
+      "id": "quest",
+      "title": "Quest",
+      "teaser": "Stadtrallye mit Rätseln und Rache.",
+      "hook": null,
+      "hero": "price",
+      "text": "Löst Rätsel an echten Orten. Wer verliert, zahlt die nächste Runde.",
+      "duration": "2 Std.",
+      "price": "ab 25 €",
+      "status": "Heute frei",
+      "statusTone": "gruen",
+      "image": null
+    },
+    {
+      "id": "business",
+      "title": "Business",
+      "teaser": "Teamevents, die nicht nach Teamevent klingen.",
+      "hook": "Ohne Fremdscham",
+      "hero": "hook",
+      "text": "Wir bauen euren Tag aus allen fünf Linien. Ab 10 Personen.",
+      "duration": "flexibel",
+      "price": "Auf Anfrage",
+      "status": "Auf Anfrage",
+      "statusTone": "navy",
+      "image": null
+    }
+  ]
+}
