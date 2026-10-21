@@ -1,8 +1,8 @@
 # Fragments
 
-The reference page cut into one file per template, generated from `reference/index.html`.
+The reference page cut into one file per template.
 Render from these, not from the whole page: they are short and each holds one template's markup.
-Visual target stays `reference/index.html`. Do not edit these files; they are regenerated.
+Visual target stays `reference/index.html`. Do not edit these files; change the reference page and cut again.
 
 | File | Becomes |
 |---|---|

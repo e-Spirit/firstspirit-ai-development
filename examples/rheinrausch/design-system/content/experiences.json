@@ -1,5 +1,5 @@
 {
-  "_comment": "The six RheinRausch experience lines. One entry = one Experience card. The id is the line: it picks the CSS class rr-line--<id>, which fixes colour and icon together, and the filter tags (see js/rr-page.js). 'hero' decides the highlight on the card: 'hook' shows the yellow hook line, 'price' shows the big price tile. Never both.",
+  "_comment": "The six RheinRausch experience lines. One entry = one Experience card. The id is the line: it picks the CSS class rr-line--<id>, which fixes colour and icon together, and the filter tags (see js/page.js). 'hero' decides the highlight on the card: 'hook' shows the yellow hook line, 'price' shows the big price tile. Never both.",
   "experiences": [
     {
       "id": "rides",

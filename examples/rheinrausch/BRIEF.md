@@ -1,6 +1,6 @@
 # RheinRausch: the brief
 
-*RheinRausch is fictitious. Everything below is made up for the hackathon.*
+*RheinRausch is fictitious. Everything below is made up for this example.*
 
 > „We don't want another boring tourism website. We want people to see the Rhine and
 > immediately think: **I NEED TO DO THAT.**"
@@ -69,7 +69,7 @@ Everything is in the folder `design-system/` next to this file. You do not desig
 | Design tokens, components, extras (`rr-` classes, Tailwind theme) | `design-system/css/` (tokens, components, extras, tailwind-theme, fonts) and `design-system/js/page.js` (filter, detail dialog, demo booking) |
 | **Content to start from**: six experiences, hero, quote, goals | `design-system/content/experiences.json`, `design-system/content/site.json` |
 | Logos (SVG), icons, ribbons, stickers | `design-system/logos/`, `icons/`, `ribbons/`, `stickers/` |
-| Six images (AI-generated, free to use) | `design-system/assets/` |
+| Six images (AI-generated for this example) | `design-system/assets/` |
 | The reference page cut into one file per template | `design-system/fragments/` (see its README) |
 
 Branding in one breath: Rheinblau, cyan, pink, yellow and green on a warm paper background,

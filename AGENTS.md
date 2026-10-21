@@ -29,8 +29,7 @@ for the documentation link. If you must go on, tag every statement that depends 
 ## How to build
 
 1. **Create over REST.** Hand over only what REST cannot do, and say plainly what and why.
-2. **Read back after every write** with a fresh GET. Report what you read, not what you sent. A REST write that answers 200 is
-   not proof of a write.
+2. **Read back after every write** with a fresh GET. Report what you read, not what you sent. The response of a write is not the evidence; the read-back is.
 3. **Dependency order.** Create what a template needs first (a link template before the section that uses it, a section template
    before the catalog or content area that lists it). Say which order you used.
 4. **Do not add** templates or fields the brief or decision file does not name. If something is missing or contradicts, ask.

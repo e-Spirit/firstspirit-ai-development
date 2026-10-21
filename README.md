@@ -15,6 +15,10 @@ the counterpart to the toolkit: the toolkit holds the knowledge (skills), this r
 | `examples/rheinrausch/` | A worked example: a fictitious Cologne adventure company with a brief, a design system (look, content, markup fragments) and an empty `decisions/` folder you fill while you build. Everything in it is made up. |
 | `LICENSE`, `CODE_OF_CONDUCT.md` | MIT, as in the toolkit; Contributor Covenant |
 
+## Licences
+
+The repository is MIT licensed. The fonts in `examples/rheinrausch/design-system/fonts/` keep their own licences, next to the files.
+
 ## Skills
 
 Install the toolkit as its README describes for your assistant; for Claude Code:
