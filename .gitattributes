@@ -1,0 +1,5 @@
+# One line ending for every clone: LF in the repository and in the working tree (FSDevTools recommends LF as well).
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.zip binary

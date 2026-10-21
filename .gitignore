@@ -1,0 +1,14 @@
+# Connection details and secrets never go into Git
+.env
+.env.*
+!.env.example
+connection.env
+*.pem
+*.key
+
+# Local work of an assistant session
+projects/
+logs/
+results/
+tmp/
+.DS_Store

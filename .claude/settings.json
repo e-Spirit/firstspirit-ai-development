@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.local)",
+      "Read(~/connection.env)",
+      "Bash(printenv:*)",
+      "Bash(env)",
+      "Bash(git add -A:*)",
+      "Bash(git add --all:*)",
+      "Bash(git add .)",
+      "Bash(git commit -a:*)",
+      "Bash(git commit --no-verify:*)"
+    ]
+  }
+}
