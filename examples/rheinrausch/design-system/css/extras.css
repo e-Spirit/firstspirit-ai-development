@@ -14,7 +14,8 @@
 .rr-hero__visual img.rr-hero__photo{aspect-ratio:1/1}
 .rr-hero__splash{position:absolute;right:-20px;top:-44px;width:84px}
 .rr-sticker{position:absolute;left:-28px;bottom:-24px;display:grid;place-items:center;width:118px;height:118px;border-radius:50%;background:var(--rr-gelb);color:var(--rr-blau);border:3px solid var(--rr-blau);box-shadow:5px 5px 0 var(--rr-blau);text-align:center;font:800 1.375rem/1 var(--rr-font-heading);transform:rotate(-8deg)}
-.rr-hero .rr-divider{margin-top:var(--rr-space-4)}
+/* position:relative lifts the wave above the hero overlay (::before is absolute); the overlay still darkens the photo behind its transparent part */
+.rr-hero .rr-divider{position:relative;margin-top:var(--rr-space-4)}
 .rr-hero .rr-badge{margin-bottom:var(--rr-space-4)}
 .rr-hero h1 .rr-script{color:var(--rr-gelb);font-size:.95em}
 
@@ -51,6 +52,10 @@
 .rr-split .rr-photo img{aspect-ratio:4/3}
 .rr-section--night .rr-btn{border-color:#fff;box-shadow:5px 5px 0 var(--rr-pink)}
 .rr-band-lead{font-size:1.25rem;max-width:36ch}
+/* a night section framed by waves: the section itself is transparent, so the top divider (night fill) sits on the page;
+   the body carries the night background and ends with the paper divider */
+.rr-section--night.rr-section--framed{background:none;padding-block:0}
+.rr-section--framed .rr-section__body{background:var(--rr-night);padding-top:var(--rr-space-8)}
 
 
 /* footer */
