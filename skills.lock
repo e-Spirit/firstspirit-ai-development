@@ -1,0 +1,7 @@
+# The skills this repository expects, from the FirstSpirit AI Toolkit (github.com/e-Spirit/firstspirit-ai-toolkit).
+# scripts/check-skills.py reports what is missing or older than expected; scripts/gates.sh runs it (SKIP where no skill is installed).
+# toolkit: 0.6.0 or newer
+# name<TAB>status<TAB>what for<TAB>files this repository relies on (comma-separated, relative to the skill)
+firstspirit-rest-api	published	REST calls, read-back	references/content-templates.md
+firstspirit-template-design	published	which component, template and form quality, cutting a design into templates	references/cutting-an-artifact.md,references/choosing-an-input-component.md,references/output-conventions.md
+firstspirit-templating-reference	published	template syntax, component parameters, output	references/gom/parameters.md
