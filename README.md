@@ -65,8 +65,10 @@ leave them out. `STATE.md` and the run log stay local.
 A FirstSpirit Cloud project can be developed from a Git repository (`fs-project.yaml` at its root, the project exported into a
 folder of it by the platform's plans, one branch per branch project). This repository is not copied into that one. Clone both
 side by side: the Cloud repository is the mirror the pipeline writes and reads, this one is where you and the assistant work,
-over REST, in the branch project. The Cloud repository's own `AGENTS.md` can point here with the commit and toolkit version it
-was written against; `skills.lock` says which toolkit version this repository expects.
+over REST, in the branch project. The Cloud repository's own `AGENTS.md` points here with the version of this repository and the toolkit version it
+was written against. `skills.lock` carries this repository's version (`# version:`), the versions its rules were last
+checked with (`# written-against:` toolkit, REST module, FirstSpirit) and the toolkit version it expects;
+`scripts/check-skills.py` prints them and warns when the installed toolkit is older.
 
 ## Licences
 

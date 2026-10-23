@@ -3,6 +3,9 @@
 
   scripts/check-skills.py        one line per skill; exit 1 if a published skill is missing; SKIP (exit 0) if no skill directory exists
 
+Run it at the start of a session. It first prints this repository's own version and what it was written against (both
+from skills.lock), then the installed toolkit version, with a warning when that is older than the lock's minimum.
+
 The skills come from the FirstSpirit AI Toolkit. Search path: $FS_SKILLS_PATH (separated like PATH), else ./.claude/skills,
 ~/.claude/skills, then the install paths of the plugins Claude Code lists as installed (~/.claude/plugins/installed_plugins.json).
 A skill that lacks a file named in the fourth column of skills.lock is older than this repository expects: a warning
@@ -55,19 +58,47 @@ def toolkit_version(d):
 
 rows = []
 expected = None
+own_version = None
+written_against = None
 lock = root / "skills.lock"
 for line in lock.read_text().splitlines() if lock.is_file() else []:
     if line.startswith("# toolkit:"):
         expected = line.split(":", 1)[1].strip()
+    if line.startswith("# version:"):
+        own_version = line.split(":", 1)[1].strip()
+    if line.startswith("# written-against:"):
+        written_against = line.split(":", 1)[1].strip()
     if line.strip() and not line.startswith("#"):
         parts = line.split("\t")
         if len(parts) >= 3:
             needs = [n.strip() for n in parts[3].split(",") if n.strip()] if len(parts) > 3 else []
             rows.append((parts[0], parts[1], parts[2], needs))
 
+print(f"INFO  firstspirit-ai-development {own_version or 'unversioned'}; written against: {written_against or 'not stated'}")
+
 if not path:
     print("SKIP  skills.lock: no skill directory found on this machine (install the toolkit, or set FS_SKILLS_PATH)")
     sys.exit(0)
+
+
+def version_tuple(v):
+    """Numeric leading parts of a version ('0.6.0', '0.7.0-beta'); None when it has none."""
+    parts = []
+    for piece in (v or "").split("."):
+        digits = "".join(ch for ch in piece if ch.isdigit())
+        if not digits or digits != piece.split("-")[0]:
+            break
+        parts.append(int(digits))
+    return tuple(parts) or None
+
+
+def older_than_expected(installed, expected_text):
+    """True when the installed toolkit is older than the lock's minimum ('0.6.0 or newer'); None when either is unreadable."""
+    want = version_tuple((expected_text or "").split()[0] if expected_text else "")
+    have = version_tuple(installed)
+    if want is None or have is None:
+        return None
+    return have < want
 
 strict = os.environ.get("FS_STRICT_REFS") == "1"
 hard = 0
@@ -82,6 +113,8 @@ for name, status, why, needs in rows:
     if not version_shown:
         v = toolkit_version(d)
         print(f"INFO  toolkit version installed: {v or 'unknown'}; expected: {expected or 'not stated'}")
+        if older_than_expected(v, expected):
+            print(f"WARN  toolkit {v} is older than this repository expects ({expected}); update the plugin")
         version_shown = True
     missing = [n for n in needs if not (d / n).is_file()]
     if missing:
