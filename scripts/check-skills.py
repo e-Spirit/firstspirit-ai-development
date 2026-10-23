@@ -4,7 +4,11 @@
   scripts/check-skills.py        one line per skill; exit 1 if a published skill is missing; SKIP (exit 0) if no skill directory exists
 
 The skills come from the FirstSpirit AI Toolkit. Search path: $FS_SKILLS_PATH (separated like PATH), else ./.claude/skills,
-~/.claude/skills, then the install paths of the plugins Claude Code lists as installed (~/.claude/plugins/installed_plugins.json).
+~/.claude/skills, the install paths of the plugins Claude Code lists as installed (~/.claude/plugins/installed_plugins.json),
+and the places the other assistants put the toolkit: Gemini CLI extensions (~/.gemini/extensions/*), Cursor plugins
+(~/.cursor/plugins/*/*, the local directory included), Codex plugins (~/.codex/plugins/*/*) and Copilot plugins
+(~/.copilot/plugins/*/*). Only the Claude Code paths have been seen on a real machine; the others follow the toolkit's
+install instructions, so set FS_SKILLS_PATH when the check reports a skill you know is installed.
 A skill that lacks a file named in the fourth column of skills.lock is older than this repository expects: a warning
 (FS_STRICT_REFS=1 makes it a failure). The toolkit version is read from the package.json above the first skill found.
 """
@@ -29,8 +33,18 @@ def installed_plugin_paths():
     return out
 
 
+def other_assistant_paths():
+    """Where Gemini CLI, Cursor, Codex and Copilot keep an installed toolkit (documented locations, not seen on a machine)."""
+    out = []
+    for pattern in ("extensions/*",):
+        out += sorted((home / ".gemini").glob(pattern))
+    for base in (".cursor", ".codex", ".copilot"):
+        out += sorted((home / base / "plugins").glob("*/*"))
+    return out
+
+
 env_path = [pathlib.Path(p) for p in os.environ.get("FS_SKILLS_PATH", "").split(os.pathsep) if p]
-path = env_path or [root / ".claude" / "skills", home / ".claude" / "skills", *installed_plugin_paths()]
+path = env_path or [root / ".claude" / "skills", home / ".claude" / "skills", *installed_plugin_paths(), *other_assistant_paths()]
 path = [p for p in path if p.is_dir()]
 
 

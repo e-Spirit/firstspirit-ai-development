@@ -10,13 +10,16 @@ the counterpart to the toolkit: the toolkit holds the knowledge (skills), this r
 
 - A FirstSpirit **development** project with the REST API enabled, its project ID, and a login that may write in it. Never a
   production project, never one with customer data.
-- An AI coding assistant with the toolkit installed (Claude Code, Codex, Cursor, Gemini CLI or GitHub Copilot CLI; the
-  [toolkit README](https://github.com/e-Spirit/firstspirit-ai-toolkit#readme) has the install command for each).
-  For Claude Code:
-  ```
-  /plugin marketplace add e-Spirit/firstspirit-ai-toolkit
-  /plugin install firstspirit-ai-toolkit
-  ```
+- An AI coding assistant with the toolkit installed: Claude Code, GitHub Copilot CLI, Codex, Gemini CLI or Cursor. The
+  [toolkit README](https://github.com/e-Spirit/firstspirit-ai-toolkit#readme) has the full instructions; the short form:
+
+  | Assistant | Install |
+  |---|---|
+  | Claude Code | `/plugin marketplace add e-Spirit/firstspirit-ai-toolkit` then `/plugin install firstspirit-ai-toolkit` |
+  | GitHub Copilot CLI | `copilot plugin marketplace add e-Spirit/firstspirit-ai-toolkit` then `copilot plugin install firstspirit-ai-toolkit@firstspirit` |
+  | Codex CLI | `codex plugin marketplace add https://github.com/e-Spirit/firstspirit-ai-toolkit` then `codex plugin add firstspirit-ai-toolkit@firstspirit` |
+  | Gemini CLI | `gemini extensions install https://github.com/e-Spirit/firstspirit-ai-toolkit` (from a shell, not inside Gemini) |
+  | Cursor | team marketplace import of `e-Spirit/firstspirit-ai-toolkit`, or a clone symlinked into `~/.cursor/plugins/local/` |
 - `git`, `python3` (3.9 or newer; the scripts and the hooks use it), `curl` and `jq` (the REST skill uses them).
   On Windows, use Git Bash or WSL for the shell commands.
 
@@ -47,12 +50,12 @@ the counterpart to the toolkit: the toolkit holds the knowledge (skills), this r
 
 | Path | What |
 |---|---|
-| `AGENTS.md` | The rules for an assistant (and a checklist for people). `CLAUDE.md` points to it. |
+| `AGENTS.md` | The rules for an assistant (and a checklist for people). Codex and Cursor read it directly; `CLAUDE.md` (Claude Code), `GEMINI.md` (Gemini CLI) and `.github/copilot-instructions.md` (GitHub Copilot) point to it, so every assistant gets the same rules |
 | `connection.env.example` | The connection file for the assistant, without values. You copy it to `~/connection.env`, outside this repository |
 | `scripts/check-connection.py` | Checks the connection file: complete, no placeholder, `FS_STAGE` is development, the project answers. Prints no value |
-| `skills.lock`, `scripts/check-skills.py` | The toolkit skills this repository expects, and a check that they are installed and not older than expected |
+| `skills.lock`, `scripts/check-skills.py` | The toolkit skills this repository expects, and a check that they are installed and not older than expected. It looks where each assistant installs the toolkit; `FS_SKILLS_PATH` overrides the search |
 | `scripts/runlog.py` | A redacted running log of a session (steps, seconds, errors and who handled them), local and ignored by Git. You can hand it in as feedback |
-| `.claude/settings.json` | Permission rules for Claude Code: no reading of the connection file, no `git add -A`, no skipped hooks |
+| `.claude/settings.json` | Permission rules for Claude Code: no reading of the connection file, no `git add -A`, no skipped hooks. Only Claude Code enforces them; in the other assistants the same rules are text in `AGENTS.md`, and the pre-commit secret scan holds for all |
 | `scripts/gates.sh`, `scripts/secret-scan.py`, `.githooks/`, `.github/workflows/gates.yml` | A secret scan before every commit (`scripts/install-hooks.sh`, once per clone) and in CI, the unit tests, the skills check |
 | `examples/rheinrausch/` | A worked example: a fictitious Cologne adventure company with a brief, a design system (look, content, markup fragments) and an empty `decisions/` folder you fill while you build. Everything in it is made up |
 | `LICENSE`, `CODE_OF_CONDUCT.md` | MIT, as in the toolkit; Contributor Covenant |
