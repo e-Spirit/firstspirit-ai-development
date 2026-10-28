@@ -22,10 +22,10 @@ output, and again when a skill seems not to know something it should.
 
 - **Development projects only.** Never production, never a project with customer data. Work only in the project whose ID is in
   `FS_PROJECT_ID`; if it is not clear which project is the person's, read its name and ask.
-- **Before the first write of a session, run `scripts/check-connection.py <file>`** and show its output. It refuses a file without
+- **Before the first write of a session, run `scripts/check-connection.py`** and show its output. It refuses a file without
   `FS_STAGE='development'`, a non-https address or a placeholder, and prints the project name. Do not write until the person has
   confirmed the name. Do not read the connection file yourself.
-- **The connection is a file or the environment**, normally `~/connection.env` outside this repository, with `FS_REST_BASE_URL`,
+- **The connection is a file or the environment**, normally `connection.env` in the root of this repository (ignored by Git) or the file named in `FS_CONNECTION_FILE` (`scripts/check-connection.py --path` says which one is used, never a value), with `FS_REST_BASE_URL`,
   `FS_PROJECT_ID`, `FS_USERNAME`, `FS_PASSWORD`, `FS_STAGE`. Never print the password or any other value of it (say set or empty),
   never write it to a file here, never put it on a command line you show. When a request fails, name the status code and the
   likely cause (401 login, 403 permission, 404 address or project ID, network) before you try anything else.

@@ -29,10 +29,10 @@ the counterpart to the toolkit: the toolkit holds the knowledge (skills), this r
    ```bash
    scripts/install-hooks.sh
    ```
-2. Copy `connection.env.example` to `~/connection.env`, outside the repository, fill it in for your development project and
-   check it. The check prints set or empty for each value, never the value, and shows the project name so you can confirm it:
+2. Copy `connection.env.example` to `connection.env` in the root of this repository (Git ignores it), or keep it anywhere and
+   set `FS_CONNECTION_FILE` to its full path. Fill it in for your development project and check it. The check prints set or empty for each value, never the value, and shows the project name so you can confirm it:
    ```bash
-   scripts/check-connection.py ~/connection.env
+   scripts/check-connection.py
    ```
 3. Check that the skills are installed:
    ```bash
@@ -51,7 +51,7 @@ the counterpart to the toolkit: the toolkit holds the knowledge (skills), this r
 | Path | What |
 |---|---|
 | `AGENTS.md` | The rules for an assistant (and a checklist for people). Codex and Cursor read it directly; `CLAUDE.md` (Claude Code), `GEMINI.md` (Gemini CLI) and `.github/copilot-instructions.md` (GitHub Copilot) point to it, so every assistant gets the same rules |
-| `connection.env.example` | The connection file for the assistant, without values. You copy it to `~/connection.env`, outside this repository |
+| `connection.env.example` | The connection file for the assistant, without values. You copy it to `connection.env` in this repository's root (ignored by Git), or to a place named in `FS_CONNECTION_FILE` |
 | `scripts/check-connection.py` | Checks the connection file: complete, no placeholder, `FS_STAGE` is development, the project answers. Prints no value |
 | `skills.lock`, `scripts/check-skills.py` | The toolkit skills this repository expects, and a check that they are installed and not older than expected. It looks where each assistant installs the toolkit; `FS_SKILLS_PATH` overrides the search |
 | `scripts/runlog.py` | A redacted running log of a session (steps, seconds, errors and who handled them), local and ignored by Git. You can hand it in as feedback |

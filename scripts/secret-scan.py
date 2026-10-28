@@ -86,6 +86,21 @@ def staged():
         except UnicodeDecodeError: continue
 
 
+def git_ignored(directory, paths):
+    """The paths Git ignores (for example your own connection.env): they cannot be committed, and --staged still checks
+    anything that is force-added. Empty where Git or a repository is not there, so a plain folder is scanned in full."""
+    if not paths:
+        return set()
+    try:
+        out = subprocess.run(["git", "-C", str(directory), "check-ignore", "-z", "--stdin"], capture_output=True,
+                             input="\0".join(str(p) for p in paths).encode(), timeout=60)
+    except (OSError, subprocess.SubprocessError):
+        return set()
+    if out.returncode not in (0, 1):
+        return set()
+    return {Path(x.decode()) for x in out.stdout.split(b"\0") if x}
+
+
 def main(argv):
     if argv[1:] == ["--staged"]:
         findings, scanned = [], 0
@@ -104,8 +119,10 @@ def main(argv):
         if not d.exists():
             print("secret-scan: %s does not exist" % d, file=sys.stderr)
             return 2
-        for path in sorted(d.rglob("*")):
-            if not path.is_file() or any(part in SKIP_DIRS for part in path.parts):
+        candidates = [p for p in sorted(d.rglob("*")) if p.is_file() and not any(part in SKIP_DIRS for part in p.parts)]
+        ignored = git_ignored(d, candidates)
+        for path in candidates:
+            if path in ignored:
                 continue
             scanned += 1
             if path.suffix.lower() == ".xml":
