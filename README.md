@@ -34,6 +34,7 @@ the counterpart to the toolkit: the toolkit holds the knowledge (skills), this r
    ```bash
    scripts/check-connection.py
    ```
+   Several projects or servers: one file each, anywhere, and `FS_CONNECTION_FILE` or the path argument selects it.
 3. Check that the skills are installed:
    ```bash
    scripts/check-skills.py
