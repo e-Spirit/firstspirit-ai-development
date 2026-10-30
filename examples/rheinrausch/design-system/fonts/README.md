@@ -1,6 +1,6 @@
 # Fonts
 
-Self-hosted so the page renders without internet. Declared in `css/fonts.css`, used through `css/tokens.css`.
+Self-hosted so the page renders without internet. The licences of everything else in the example are in `../../LICENSES.md`. Declared in `css/fonts.css`, used through `css/tokens.css`.
 
 | File | Family | Used for | Licence |
 |---|---|---|---|
