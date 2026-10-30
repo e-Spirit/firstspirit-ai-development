@@ -60,6 +60,7 @@ the counterpart to the toolkit: the toolkit holds the knowledge (skills), this r
 | `scripts/gates.sh`, `scripts/secret-scan.py`, `.githooks/`, `.github/workflows/gates.yml` | A secret scan before every commit (`scripts/install-hooks.sh`, once per clone) and in CI, the unit tests, the skills check |
 | `examples/rheinrausch/` | A worked example: a fictitious Cologne adventure company with a brief, a design system (look, content, markup fragments) and an empty `decisions/` folder you fill while you build. Everything in it is made up |
 | `LICENSE`, `CODE_OF_CONDUCT.md` | MIT, as in the toolkit; Contributor Covenant |
+| `CHANGELOG.md` | What each version holds; the version is also in `skills.lock` |
 
 The copies of what the assistant sent (`templates/<name>/` in the example folder) are yours: commit them on your own branch or
 leave them out. `STATE.md` and the run log stay local.
