@@ -62,7 +62,7 @@ the counterpart to the toolkit: the toolkit holds the knowledge (skills), this r
 | `examples/rheinrausch/` | A worked example: a fictitious Cologne adventure company with a brief, a design system (look, content, markup fragments) and an empty `decisions/` folder you fill while you build. Everything in it is made up |
 | `LICENSE`, `CODE_OF_CONDUCT.md` | MIT, as in the toolkit; Contributor Covenant. The example is CC0 and its fonts keep their licences: `examples/rheinrausch/LICENSES.md` |
 | `CHANGELOG.md` | What each version holds; the version is also in `skills.lock` |
-| `.github/ISSUE_TEMPLATE/feedback.yml`, `.github/pull_request_template.md` | The feedback form and the checklist for a pull request |
+| `.github/ISSUE_TEMPLATE/`, `.github/pull_request_template.md` | The issue forms (feedback, session report, question; skill problems go to the toolkit) and the checklist for a pull request |
 
 The copies of what the assistant sent (`templates/<name>/` in the example folder) are yours: commit them on your own branch or
 leave them out. `STATE.md` and the run log stay local.
