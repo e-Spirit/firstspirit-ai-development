@@ -61,7 +61,8 @@ FirstSpirit side: templates, forms, content and the page in the preview.
 
 ## What you get
 
-Everything is in the folder `design-system/` next to this file. You do not design anything.
+Everything is in the folder `design-system/` next to this file. You do not design anything. The design system was generated with
+Claude (Claude Design) from this brief and reviewed by a person; the images with OpenAI's image model; terms in `LICENSES.md`.
 
 | What | Where |
 |---|---|

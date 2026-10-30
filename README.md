@@ -80,7 +80,9 @@ checked with (`# written-against:` toolkit, REST module, FirstSpirit) and the to
 ## Licences and legal
 
 - **Code and text of this repository**, the example's brief, content, markup, stylesheets, logos and icons included: MIT, as in the
-  toolkit ([LICENSE](LICENSE)).
+  toolkit ([LICENSE](LICENSE)). The example's design system (everything in `examples/rheinrausch/design-system/` except fonts and
+  images) was generated with Claude (Anthropic's Claude Design) from our brief and reviewed by a person; under Anthropic's terms the
+  output belongs to the user, and we license it under MIT to the extent we hold rights in it.
 - **Fonts** in `examples/rheinrausch/design-system/fonts/` keep their own licences, shipped next to the files: Bricolage Grotesque and
   DM Sans under the SIL Open Font License 1.1, Yellowtail under the Apache License 2.0.
 - **Images** in `examples/rheinrausch/design-system/assets/`: six JPEGs generated with OpenAI's image model for this example and
