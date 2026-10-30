@@ -35,7 +35,8 @@ the counterpart to the toolkit: the toolkit holds the knowledge (skills), this r
    scripts/check-connection.py
    ```
    Several projects or servers: one file each, anywhere, and `FS_CONNECTION_FILE` or the path argument selects it.
-3. Check that the skills are installed:
+3. See which FirstSpirit skills are installed, with their version and where, and whether the ones this repository expects are
+   among them. It looks where every assistant installs the toolkit; no toolkit checkout is needed:
    ```bash
    scripts/check-skills.py
    ```
@@ -54,7 +55,7 @@ the counterpart to the toolkit: the toolkit holds the knowledge (skills), this r
 | `AGENTS.md` | The rules for an assistant (and a checklist for people). Codex and Cursor read it directly; `CLAUDE.md` (Claude Code), `GEMINI.md` (Gemini CLI) and `.github/copilot-instructions.md` (GitHub Copilot) point to it, so every assistant gets the same rules |
 | `connection.env.example` | The connection file for the assistant, without values. You copy it to `connection.env` in this repository's root (ignored by Git), or to a place named in `FS_CONNECTION_FILE` |
 | `scripts/check-connection.py` | Checks the connection file: complete, no placeholder, `FS_STAGE` is development, the project answers. Prints no value |
-| `skills.lock`, `scripts/check-skills.py` | The toolkit skills this repository expects, and a check that they are installed and not older than expected. It looks where each assistant installs the toolkit; `FS_SKILLS_PATH` overrides the search |
+| `skills.lock`, `scripts/check-skills.py` | The toolkit skills this repository expects, and a scan of what is installed: every FirstSpirit skill found where the assistants install the toolkit (Claude Code skills and plugin folders, Gemini CLI extensions, Cursor, Codex, Copilot), with the version from its stamp (a published skill carries `toolkit-version`, `source-commit` and `published` in its frontmatter), its location, and whether `skills.lock` names it. Then the check: a missing expected skill fails, an older one warns. `FS_SKILLS_PATH` narrows the search, for example to a toolkit checkout; `--lock` skips the list, `--all` lists every skill |
 | `scripts/runlog.py` | A redacted running log of a session (steps, seconds, errors and who handled them), local and ignored by Git. You can hand it in as feedback |
 | `.claude/settings.json` | Permission rules for Claude Code: no reading of the connection file, no `git add -A`, no skipped hooks. Only Claude Code enforces them; in the other assistants the same rules are text in `AGENTS.md`, and the pre-commit secret scan holds for all |
 | `scripts/gates.sh`, `scripts/secret-scan.py`, `.githooks/`, `.github/workflows/gates.yml` | A secret scan before every commit (`scripts/install-hooks.sh`, once per clone) and in CI, the unit tests, the skills check |

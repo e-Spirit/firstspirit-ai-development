@@ -1,5 +1,6 @@
 # The skills this repository expects, from the FirstSpirit AI Toolkit (github.com/e-Spirit/firstspirit-ai-toolkit).
-# scripts/check-skills.py reports what is missing or older than expected; scripts/gates.sh runs it (SKIP where no skill is installed).
+# scripts/check-skills.py lists the FirstSpirit skills installed (version from each skill's stamp) and reports what is missing or
+# older than expected; scripts/gates.sh runs it (SKIP where no skill is installed).
 # toolkit: 0.6.0 or newer
 # version: 0.1.0
 # written-against: FirstSpirit AI Toolkit 0.6.0; FirstSpirit REST API module 0.0.25-beta; FirstSpirit 5.2.261011

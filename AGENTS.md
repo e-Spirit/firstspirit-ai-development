@@ -9,8 +9,9 @@ Status: working draft.
 Use the skill for the topic, not memory. If the skill is not loaded, does not exist or does not cover the question, stop and ask
 for the documentation link. If you must go on, tag every statement that depends on it `[verify]`. `skills.lock` names the skills
 and the files this repository relies on, this repository's version and the versions it was written against;
-`scripts/check-skills.py` says what is missing or older than expected. **Run it at the start of every session** and show its
-output, and again when a skill seems not to know something it should.
+`scripts/check-skills.py` lists the FirstSpirit skills installed on this machine with their version and says what is missing or
+older than expected. **Run it at the start of every session** and show its output, and again when a skill seems not to know
+something it should.
 
 | Topic | Skill |
 |---|---|
