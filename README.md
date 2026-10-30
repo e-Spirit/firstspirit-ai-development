@@ -60,7 +60,7 @@ the counterpart to the toolkit: the toolkit holds the knowledge (skills), this r
 | `.claude/settings.json` | Permission rules for Claude Code: no reading of the connection file, no `git add -A`, no skipped hooks. Only Claude Code enforces them; in the other assistants the same rules are text in `AGENTS.md`, and the pre-commit secret scan holds for all |
 | `scripts/gates.sh`, `scripts/secret-scan.py`, `.githooks/`, `.github/workflows/gates.yml` | A secret scan before every commit (`scripts/install-hooks.sh`, once per clone) and in CI, the unit tests, the skills check; CI also runs shellcheck over the shell scripts |
 | `examples/rheinrausch/` | A worked example: a fictitious Cologne adventure company with a brief, a design system (look, content, markup fragments) and an empty `decisions/` folder you fill while you build. Everything in it is made up |
-| `LICENSE`, `CODE_OF_CONDUCT.md` | MIT, as in the toolkit; Contributor Covenant. The example's fonts and images have their own terms: `examples/rheinrausch/LICENSES.md` |
+| `LICENSE`, `CODE_OF_CONDUCT.md` | MIT, as in the toolkit; Contributor Covenant. The example is CC0 and its fonts keep their licences: `examples/rheinrausch/LICENSES.md` |
 | `CHANGELOG.md` | What each version holds; the version is also in `skills.lock` |
 | `.github/ISSUE_TEMPLATE/feedback.yml`, `.github/pull_request_template.md` | The feedback form and the checklist for a pull request |
 
@@ -79,16 +79,15 @@ checked with (`# written-against:` toolkit, REST module, FirstSpirit) and the to
 
 ## Licences and legal
 
-- **Code and text of this repository**, the example's brief, content, markup, stylesheets, logos and icons included: MIT, as in the
-  toolkit ([LICENSE](LICENSE)). The example's design system (everything in `examples/rheinrausch/design-system/` except fonts and
-  images) was generated with Claude (Anthropic's Claude Design) from our brief and reviewed by a person; under Anthropic's terms the
-  output belongs to the user, and we license it under MIT to the extent we hold rights in it.
+- **Code and text of this repository** outside the example: MIT, as in the toolkit ([LICENSE](LICENSE)).
+- **The example** `examples/rheinrausch/` except the fonts: CC0 1.0, we claim no rights in it. Its design system (everything in
+  `design-system/` except fonts and images) was generated with Claude (Anthropic's Claude Design) from our brief and reviewed by a
+  person; under Anthropic's terms the output belongs to the user. Use it as you like, with the example or on its own.
 - **Fonts** in `examples/rheinrausch/design-system/fonts/` keep their own licences, shipped next to the files: Bricolage Grotesque and
   DM Sans under the SIL Open Font License 1.1, Yellowtail under the Apache License 2.0.
 - **Images** in `examples/rheinrausch/design-system/assets/`: six JPEGs generated with OpenAI's image model for this example and
-  reviewed by a person. Under OpenAI's terms the output belongs to the user who generated it, and OpenAI assigns its rights in it, if
-  any, to that user; whether such images carry copyright at all is not settled. We claim no rights in them and waive any we hold
-  under CC0 1.0. Details and the sources are in [`examples/rheinrausch/LICENSES.md`](examples/rheinrausch/LICENSES.md).
+  reviewed by a person; under OpenAI's terms the output belongs to the user who generated it. CC0 1.0 as well. Details and the
+  sources are in [`examples/rheinrausch/LICENSES.md`](examples/rheinrausch/LICENSES.md).
 
 MIT © 2026 Crownpeak Technology GmbH. FirstSpirit is a product of Crownpeak Technology GmbH, a Rezolve Ai PLC company.
 [Imprint](https://www.firstspirit.com/policies/imprint/) ·

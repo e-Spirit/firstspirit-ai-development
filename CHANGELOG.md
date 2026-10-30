@@ -19,4 +19,4 @@ First public version.
   issue form and a pull request template.
 - Worked example `examples/rheinrausch/`: a fictitious Cologne adventure company with a brief, a design system (reference page, fragments,
   tokens, content, logos, icons, self-hosted fonts, AI-generated images; the design system made with Claude Design, the images with
-  OpenAI) and an empty `decisions/` folder; the licences and the AI provenance in its `LICENSES.md`.
+  OpenAI) and an empty `decisions/` folder; CC0 except the fonts, with the AI provenance, in its `LICENSES.md`.
