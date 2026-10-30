@@ -1,0 +1,46 @@
+name: Feedback
+description: Something wrong, unclear or missing in the rules, the scripts or the example? Tell us.
+title: "[feedback] "
+labels: ["feedback"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. Keep it short; even one line helps. If you were working with an AI assistant in this
+        repository, ask it to "report this as feedback for the repository" and it fills this in for you.
+        A problem with a skill's content belongs in the toolkit: https://github.com/e-Spirit/firstspirit-ai-toolkit/issues
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where?
+      options: [AGENTS.md (the rules), scripts/check-connection.py, scripts/check-skills.py, scripts/runlog.py, secret scan or hooks, the RheinRausch example, README or other docs, something else]
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: What kind of issue?
+      options: [wrong, unclear, missing, crash, suggestion]
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what did you expect?
+      placeholder: What the assistant or the script did, and what you expected instead. No credentials, no project names.
+    validations:
+      required: true
+  - type: textarea
+    id: runlog
+    attributes:
+      label: Run log summary (optional)
+      placeholder: The output of scripts/runlog.py summary. It is redacted and safe to paste; check it anyway.
+    validations:
+      required: false
+  - type: input
+    id: version
+    attributes:
+      label: Versions (optional)
+      placeholder: The two INFO lines of scripts/check-skills.py (this repository's version and the installed skills)
+    validations:
+      required: false

@@ -62,6 +62,7 @@ the counterpart to the toolkit: the toolkit holds the knowledge (skills), this r
 | `examples/rheinrausch/` | A worked example: a fictitious Cologne adventure company with a brief, a design system (look, content, markup fragments) and an empty `decisions/` folder you fill while you build. Everything in it is made up |
 | `LICENSE`, `CODE_OF_CONDUCT.md` | MIT, as in the toolkit; Contributor Covenant |
 | `CHANGELOG.md` | What each version holds; the version is also in `skills.lock` |
+| `.github/ISSUE_TEMPLATE/feedback.yml`, `.github/pull_request_template.md` | The feedback form and the checklist for a pull request |
 
 The copies of what the assistant sent (`templates/<name>/` in the example folder) are yours: commit them on your own branch or
 leave them out. `STATE.md` and the run log stay local.
@@ -82,5 +83,6 @@ The repository is MIT licensed. The fonts in `examples/rheinrausch/design-system
 
 ## Feedback
 
-Tell us what did not work or was confusing: open an issue in this repository. The run log (`scripts/runlog.py summary`) is
-redacted and safe to attach.
+Tell us what did not work or was confusing: open an issue in this repository (the feedback form asks where, what kind, what
+happened). The run log (`scripts/runlog.py summary`) is redacted and safe to attach; a problem with a skill's content goes to
+the [toolkit's issues](https://github.com/e-Spirit/firstspirit-ai-toolkit/issues).
