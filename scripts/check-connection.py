@@ -98,11 +98,14 @@ def main(argv):
             return 1
         source = str(path)
         print(f"INFO  using {source} ({why})")
-        try:
-            mode = path.stat().st_mode & 0o077
-            report(mode == 0, "C0", f"file readable by the owner only ({source})" if mode == 0 else f"file is readable by others: chmod 600 {source}")
-        except OSError:
-            pass
+        if os.name == "nt":
+            print("INFO  C0  file permissions are not checked on Windows (keep the file in a folder only you can read)")
+        else:
+            try:
+                mode = path.stat().st_mode & 0o077
+                report(mode == 0, "C0", f"file readable by the owner only ({source})" if mode == 0 else f"file is readable by others: chmod 600 {source}")
+            except OSError:
+                pass
         values, trailing = read_file(path)
 
     for key in REQUIRED:
