@@ -3,7 +3,7 @@
 # older than expected; scripts/gates.sh runs it (SKIP where no skill is installed).
 # toolkit: 0.6.0 or newer
 # version: 0.1.0
-# written-against: FirstSpirit AI Toolkit 0.6.0; FirstSpirit REST API module 0.0.25-beta; FirstSpirit 5.2.261011
+# written-against: FirstSpirit AI Toolkit 0.7.0; FirstSpirit REST API module 0.0.25-beta; FirstSpirit 5.2.261011
 # `version` is this repository's own version; a Cloud Git repository's AGENTS.md names the version it was written against.
 # `written-against` are the versions the rules and the example were last checked with; the REST module version is not
 # readable from its OpenAPI document, so check-connection.py cannot verify it: compare it with the server's module list.

@@ -29,12 +29,8 @@ The REST skill owns what the API can and cannot do. If a step needs something it
 
 ## Details the skills leave open
 
-Seen while this example was built `[observed]` (REST module 0.0.25-beta, 2026-10). Skills do not cover everything; when a skill
-says otherwise, the skill is newer and wins.
-
-- A GOM sent over REST has no `<FORM>` root: put the editors directly in `<CMS_MODULE>`. `FS_CATALOG` takes no `hFill` and must
-  name its section templates (`<TEMPLATES type="section">`).
-- A new catalog card needs a UUID as `id`; option editors take `{"key","value"}`; a reference to a medium needs `uidType`
-  `MEDIASTORE_LEAF`.
-- The server checks link-template references when it writes a form: create the link template first.
-- REST cannot create media folders, set "parse file" on a medium, or create datasets and table templates. Hand those over.
+None at FirstSpirit AI Toolkit 0.7.0. What this example needed and the REST module did not do as the documentation suggests is in
+`firstspirit-rest-api` now: the GOM root and the catalog traps in `references/content-templates.md`, catalog cards in
+`references/content-catalog.md`, media and dataset limits in `SKILL.md`. When you hit something a skill does not cover, write it
+here as one line tagged `[observed]` with the REST module version and the month, so the skill can take it over; when a skill says
+otherwise, the skill is newer and wins.

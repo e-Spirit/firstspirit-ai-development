@@ -12,7 +12,8 @@ First public version.
   root, home folder), placeholder and stage checks, `--path`, a GET on the project that shows its name and never a value.
 - `skills.lock` and `scripts/check-skills.py`: a list of the FirstSpirit skills installed where Claude Code, GitHub Copilot, Codex,
   Gemini CLI and Cursor put them, each with the version from its stamp and its location, then the check of the skills and files this
-  repository relies on; written against FirstSpirit AI Toolkit 0.6.0, FirstSpirit REST API module 0.0.25-beta and FirstSpirit 5.2.261011.
+  repository relies on; written against FirstSpirit AI Toolkit 0.7.0 (0.6.0 or newer is accepted), FirstSpirit REST API module 0.0.25-beta and
+  FirstSpirit 5.2.261011.
 - `scripts/runlog.py`: a redacted running log of a session, with `check` and `summary`.
 - Guards: `scripts/secret-scan.py` as a pre-commit hook (`scripts/install-hooks.sh`) and in CI (`.github/workflows/gates.yml`, with
   shellcheck), `scripts/gates.sh`, Claude Code permission rules in `.claude/settings.json`, unit tests under `tests/`; a feedback
