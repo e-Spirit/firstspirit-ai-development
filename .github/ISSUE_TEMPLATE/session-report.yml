@@ -1,0 +1,54 @@
+name: Session report
+description: A build session with an assistant that went wrong, got stuck or took too long. The run log tells us most of it.
+title: "[session] "
+labels: ["session"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks. Ask your assistant to "report this session as an issue" and it fills this in from the run log and STATE.md.
+        No credentials, no server addresses, no project or customer names: the run log is redacted, the rest is up to you.
+  - type: dropdown
+    id: assistant
+    attributes:
+      label: Assistant
+      options: [Claude Code, GitHub Copilot CLI, Codex CLI, Gemini CLI, Cursor, other]
+    validations:
+      required: true
+  - type: dropdown
+    id: step
+    attributes:
+      label: Where did it go wrong?
+      options: [connection check, skills check, deciding a template, building over REST, reading back, the preview, keeping copies or STATE.md, somewhere else]
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      placeholder: What the assistant did, what you expected, and what you did about it. Status codes and error classes help; values do not.
+    validations:
+      required: true
+  - type: textarea
+    id: runlog
+    attributes:
+      label: Run log summary
+      placeholder: The output of scripts/runlog.py summary. Redacted by the script; read it once before pasting.
+      render: text
+    validations:
+      required: false
+  - type: textarea
+    id: versions
+    attributes:
+      label: Versions
+      placeholder: The INFO lines of scripts/check-skills.py (this repository's version, the installed skills and their stamps).
+      render: text
+    validations:
+      required: false
+  - type: checkboxes
+    id: project
+    attributes:
+      label: Project
+      options:
+        - label: This was a development project without customer data.
+          required: true

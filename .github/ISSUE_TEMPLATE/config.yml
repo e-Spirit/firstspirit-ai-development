@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: A skill is wrong, unclear or missing something
+    url: https://github.com/e-Spirit/firstspirit-ai-toolkit/issues/new/choose
+    about: The skills live in the FirstSpirit AI Toolkit; report skill content there.

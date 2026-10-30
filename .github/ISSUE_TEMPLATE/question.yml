@@ -1,0 +1,18 @@
+name: Question
+description: Something in the rules, the quick start or the example is unclear.
+title: "[question] "
+labels: ["question"]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+      placeholder: Name the file or the step it is about, if you can.
+    validations:
+      required: true
+  - type: textarea
+    id: tried
+    attributes:
+      label: What you tried or read (optional)
+    validations:
+      required: false
