@@ -21,6 +21,6 @@ if [ -z "$SC" ]; then echo "SKIP  G5 shellcheck not installed (pip3 install --us
 elif "$SC" --severity=warning "$HERE"/scripts/*.sh "$HERE"/.githooks/pre-commit; then echo "PASS  G5 shellcheck"
 else echo "FAIL  G5 shellcheck"; rc=1; fi
 # G4: the skills this repository expects (skills.lock). SKIP where no skill is installed, for example in CI.
-if python3 "$HERE/scripts/check-skills.py"; then echo "PASS  G4 skills (skills.lock)"; else echo "FAIL  G4 skills: a published skill is missing (install the toolkit)"; rc=1; fi
+if python3 "$HERE/scripts/check-skills.py" --lock; then echo "PASS  G4 skills (skills.lock)"; else echo "FAIL  G4 skills: a published skill is missing (install the toolkit)"; rc=1; fi
 [ $rc -eq 0 ] && echo "gates: green" || echo "gates: FAILED"
 exit $rc
